@@ -1,0 +1,31 @@
+<!--
+	Exemplary file for Chapter 2 - Designing a User Interface.
+    Recipe: Adding a text box.
+-->
+
+<Page
+    x:Class="CH02.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH02"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBox
+            PlaceholderText="Type a first name..."
+            BorderBrush="#4a4a4a"
+            BorderThickness="3"
+            Foreground="#4a4a4a"
+            Background="#efefef"
+            FontSize="20"
+            FontWeight="SemiBold"
+            Padding="10"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Stretch"
+            Margin="20"
+            TextChanging="TextBox_TextChanging"
+            TextChanged="TextBox_TextChanged" />
+    </Grid>
+</Page>

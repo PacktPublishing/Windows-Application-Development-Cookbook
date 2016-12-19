@@ -1,0 +1,107 @@
+﻿<!--
+	Exemplary file for Chapter 2 - Designing a User Interface.
+    Recipe: Adjusting design based on device type.
+-->
+
+<Page
+    x:Class="CH02.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH02"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="White">
+
+    <ScrollViewer>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="20" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="20" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="1"
+                Grid.ColumnSpan="3"
+                FontSize="42"
+                TextWrapping="Wrap">
+                <Run Text="Register" />
+                <Run Text=" / Please complete the following form to create a new account."
+                     FontSize="20"
+                     Foreground="Gray" />
+            </TextBlock>
+            <TextBox
+                Grid.Row="3"
+                Grid.Column="1"
+                PlaceholderText="Type a first name..."
+                Header="First name"
+                InputScope="PersonalFullName"
+                FontSize="20" />
+            <TextBox
+                Grid.Row="3"
+                Grid.Column="3"
+                PlaceholderText="Type a first name..."
+                Header="Last name"
+                InputScope="PersonalFullName"
+                FontSize="20" />
+            <TextBox
+                Grid.Row="5"
+                Grid.Column="1"
+                PlaceholderText="Type an e-mail address..."
+                Header="E-mail address"
+                InputScope="EmailNameOrAddress"
+                FontSize="20" />
+            <TextBox
+                Grid.Row="5"
+                Grid.Column="3"
+                PlaceholderText="Type a phone number..."
+                Header="Phone number"
+                InputScope="NameOrPhoneNumber"
+                FontSize="20" />
+            <DatePicker
+                Grid.Row="7"
+                Grid.Column="1"
+                Header="Birth date"
+                FontSize="20" />
+            <ComboBox
+                Grid.Row="7"
+                Grid.Column="3"
+                PlaceholderText="Choose a country..."
+                Header="Country"
+                SelectedIndex="0"
+                FontSize="20"
+                HorizontalAlignment="Stretch">
+                <ComboBoxItem Content="Poland" Tag="PL" />
+                <ComboBoxItem Content="Germany" Tag="DE" />
+                <ComboBoxItem Content="England" Tag="EN" />
+            </ComboBox>
+            <Button
+                Grid.Row="9"
+                Grid.Column="3"
+                Content="Submit"
+                FontSize="22"
+                BorderBrush="Gray"
+                BorderThickness="2"
+                Background="LightGray" 
+                HorizontalAlignment="Right"
+                Padding="30 10" />
+        </Grid>
+    </ScrollViewer>
+</Page>

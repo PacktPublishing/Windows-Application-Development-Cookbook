@@ -1,0 +1,35 @@
+<!--
+    Exemplary file for Chapter 3 - MVVM and Data Binding.
+    Recipe: Using value converters with parameters.
+-->
+
+<Page
+    x:Class="CH03.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH03"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:converters="using:CH03.Models">
+    <Page.Resources>
+        <converters:BoolToColorConverter x:Key="BoolToColor" />
+    </Page.Resources>
+    <ScrollViewer Background="White">
+        <StackPanel>
+            <Button 
+                Content="Change the color"
+                Command="{Binding CmdChangeColor}"
+                Margin="20" 
+                Padding="10"
+                FontSize="20"
+                HorizontalAlignment="Stretch" />
+            <TextBlock
+                Foreground="{Binding IsPrimaryColor, Converter={StaticResource BoolToColor}, ConverterParameter='#db0707|#33b11a'}"
+                Text="Value converters are a really powerful solution that increases possibilities of the data binding mechanism. In this recipe, you can see how to create a value converter that takes a Boolean value and converts it into one of two colors. If the Boolean expression is evaluated to true, the first color from the additional parameter is used. Otherwise, the other one."
+                TextWrapping="Wrap"
+                Margin="20 0 20 20"
+                FontSize="18" />
+        </StackPanel>
+    </ScrollViewer>
+</Page>

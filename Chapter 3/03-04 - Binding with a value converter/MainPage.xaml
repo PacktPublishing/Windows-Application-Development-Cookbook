@@ -1,0 +1,35 @@
+<!--
+    Exemplary file for Chapter 3 - MVVM and Data Binding.
+    Recipe: Binding with a value converter.
+-->
+
+<Page
+    x:Class="CH03.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH03"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:converters="using:CH03.Models">
+    <Page.Resources>
+        <converters:BoolToVisibilityConverter x:Key="BoolToVisibility" />
+    </Page.Resources>
+    <ScrollViewer Background="White">
+        <StackPanel>
+            <Button 
+                Content="Toggle the content"
+                Command="{Binding CmdToggleContent}"
+                Margin="20" 
+                Padding="10"
+                FontSize="20"
+                HorizontalAlignment="Stretch" />
+            <TextBlock
+                Text="Value converters are a really powerful solution that increases possibilities of the data binding mechanism. In this recipe, you can see how to create a simple value converter that takes a Boolean value and converts it into a Visibility value indicating whether some object should be visible or collapsed. Of course, that is also possible to create value converters that take into account even an additional passed parameter."
+                TextWrapping="Wrap"
+                Margin="20 0 20 20"
+                FontSize="18"
+                Visibility="{Binding IsContentShown, Converter={StaticResource BoolToVisibility}}" />
+        </StackPanel>
+    </ScrollViewer>
+</Page>

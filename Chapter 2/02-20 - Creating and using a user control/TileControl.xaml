@@ -1,0 +1,49 @@
+<!--
+	Exemplary file for Chapter 2 - Designing a User Interface.
+    Recipe: Creating and using a user control.
+-->
+
+<UserControl
+    x:Class="CH02.TileControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH02"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="100"
+    d:DesignWidth="100">
+
+    <UserControl.Resources>
+        <Style x:Key="GrdTile" TargetType="Grid">
+            <Setter Property="Padding" Value="5" />
+        </Style>
+        <Style x:Key="ImgIcon" TargetType="Image">
+            <Setter Property="MaxWidth" Value="40" />
+            <Setter Property="MaxHeight" Value="40" />
+        </Style>
+        <Style x:Key="TxtTitle" TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" 
+                    Value="Bottom" />
+            <Setter Property="FontSize" Value="12" />
+        </Style>
+    </UserControl.Resources>
+
+    <Grid
+        Style="{StaticResource GrdTile}"
+        Background="{Binding TileBackground}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Image
+            Grid.Row="0"
+            Style="{StaticResource ImgIcon}"
+            Source="{Binding IconUrl}" />
+        <TextBlock
+            Grid.Row="1"
+            Style="{StaticResource TxtTitle}"
+            Text="{Binding Title}"
+            Foreground="{Binding TileForeground}" />
+    </Grid>
+</UserControl>

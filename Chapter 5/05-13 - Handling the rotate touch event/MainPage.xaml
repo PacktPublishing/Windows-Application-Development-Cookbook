@@ -1,0 +1,26 @@
+<!--
+    Exemplary file for Chapter 5 - Animations and Graphics.
+    Recipe: Handling the "rotate" touch event.
+-->
+
+<Page
+    x:Class="CH05.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH05"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid>
+        <Image 
+            Source="/Assets/Photo.jpg"
+            ImageOpened="Image_ImageOpened"
+            ManipulationMode="Rotate,RotateInertia"
+            ManipulationDelta="Image_ManipulationDelta"
+            Stretch="UniformToFill">
+            <Image.RenderTransform>
+                <RotateTransform x:Name="ImageRotateTransform" />
+            </Image.RenderTransform>
+        </Image>
+    </Grid>
+</Page>

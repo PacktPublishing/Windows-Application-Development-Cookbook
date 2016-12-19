@@ -1,0 +1,28 @@
+<!--
+	Exemplary file for Chapter 2 - Designing a User Interface.
+    Recipe: Adding a text block.
+-->
+
+<Page
+    x:Class="CH02.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH02"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock
+            Text="Exemplary justified content located in the TextBlock control. That is possible to easily adjust appearance of the text using a set of available properties."
+            TextAlignment="Justify"
+            MaxLines="3"
+            TextTrimming="CharacterEllipsis"
+            TextWrapping="Wrap"
+            LineHeight="30"
+            Foreground="RoyalBlue"
+            FontSize="20"
+            FontWeight="Thin"
+            Margin="20" />
+    </Grid>
+</Page>

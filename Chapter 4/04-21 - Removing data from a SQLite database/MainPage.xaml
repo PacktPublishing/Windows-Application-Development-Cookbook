@@ -1,0 +1,131 @@
+<!--
+    Exemplary file for Chapter 4 - Data Storage.
+    Recipe: Removing data from a SQLite database.
+-->
+
+<Page
+    x:Class="CH04.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH04"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+        </Style>
+    </Page.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="1"
+            Text="List of entries"
+            FontSize="32" />
+        
+        <ListView
+            Grid.Row="3"
+            Grid.Column="1"
+            ItemsSource="{Binding Entries}"
+            SelectedItem="{Binding Entry, Mode=TwoWay}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock
+                            Text="{Binding Title}"
+                            FontWeight="SemiBold" />
+                        <TextBlock
+                            Text="{Binding Content}"
+                            TextWrapping="Wrap" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+        <Grid
+            Grid.Row="5"
+            Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Button
+                Grid.Column="0"
+                Command="{Binding CmdAdd}"
+                Content="Add" />
+            <Button
+                Grid.Column="2"
+                Command="{Binding CmdEdit}"
+                IsEnabled="{Binding IsEntrySelected}"
+                Content="Edit" />
+            <Button
+                Grid.Column="4"
+                Command="{Binding CmdDelete}"
+                IsEnabled="{Binding IsEntrySelected}"
+                Content="Delete" />
+        </Grid>
+        
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="3"
+            Text="Blog entry"
+            FontSize="32" />
+        
+        <Grid
+            Grid.Row="3"
+            Grid.RowSpan="3"
+            Grid.Column="3">
+            <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <TextBox
+                        Header="Title"
+                        Text="{Binding Title, Mode=TwoWay}"
+                        PlaceholderText="Type a title..."/>
+                    <TextBox
+                        Header="Content"
+                        Text="{Binding Content, Mode=TwoWay}"
+                        PlaceholderText="Type content..."
+                        AcceptsReturn="True"
+                        Height="200"
+                        Margin="0 20 0 0" />
+                    <ComboBox
+                        Header="Category"
+                        PlaceholderText="Choose a category..."
+                        Margin="0 20 0 0"
+                        HorizontalAlignment="Stretch"
+                        ItemsSource="{Binding Categories}"
+                        SelectedItem="{Binding Category, Mode=TwoWay}"
+                        DisplayMemberPath="Name" />
+                    <Button
+                        Margin="0 20 0 0"
+                        HorizontalAlignment="Stretch"
+                        Content="Save the entry"
+                        Command="{Binding CmdSave}" />
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Page>

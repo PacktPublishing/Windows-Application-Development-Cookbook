@@ -1,0 +1,52 @@
+<!--
+    Exemplary file for Chapter 7 - Built-in Sensors.
+    Recipe: Obtaining the current GPS location.
+-->
+
+<Page
+    x:Class="CH07.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH07"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="White">
+    <Grid 
+        Background="#4a4a4a"
+        Padding="20">
+        <Grid VerticalAlignment="Center">
+            <Image Source="/Assets/Map.png" />
+            <Canvas>
+                <Ellipse
+                    x:Name="EllUser"
+                    Width="10"
+                    Height="10"
+                    Fill="Black"
+                    Visibility="Collapsed" />
+            </Canvas>
+        </Grid>
+        <Border
+            x:Name="BorStatus"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Width="30"
+            Height="30"
+            CornerRadius="30"
+            Background="Red"
+            BorderThickness="1"
+            BorderBrush="Black" />
+        <HyperlinkButton
+            x:Name="BtnNoAccess"
+            Foreground="White"
+            VerticalAlignment="Bottom"
+            NavigateUri="ms-settings:privacy-location"
+            Visibility="Collapsed">
+            <TextBlock
+                Text="The application cannot use location. 
+                      Click here to change settings."
+                TextWrapping="Wrap"
+                FontSize="16" />
+        </HyperlinkButton>
+    </Grid>
+</Page>

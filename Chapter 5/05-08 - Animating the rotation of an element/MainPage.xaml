@@ -1,0 +1,44 @@
+<!--
+    Exemplary file for Chapter 5 - Animations and Graphics.
+    Recipe: Animating the rotation of an element.
+-->
+
+<Page
+    x:Class="CH05.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH05"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <Storyboard x:Name="ImageRotate">
+            <DoubleAnimation
+                Storyboard.TargetName="Rotation"
+                Storyboard.TargetProperty="Angle"
+                From="0" To="360"
+                Duration="0:0:2"
+                RepeatBehavior="Forever" />
+        </Storyboard>
+    </Page.Resources>
+    <Grid>
+        <Image
+            Source="/Assets/ProgressBackground.png"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Width="300" />
+        <Image
+            Source="/Assets/ProgressForeground.png"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Width="300"
+            Tapped="Image_Tapped">
+            <Image.RenderTransform>
+                <RotateTransform
+                    x:Name="Rotation" 
+                    CenterX="150"
+                    CenterY="150" />
+            </Image.RenderTransform>
+        </Image>
+    </Grid>
+</Page>

@@ -1,0 +1,47 @@
+<!--
+    Exemplary file for Chapter 4 - Data Storage.
+    Recipe: Reading a text file.
+-->
+
+<Page
+    x:Class="CH04.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH04"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock
+            Grid.Row="0"
+            Text="Note"
+            FontSize="24" />
+        <TextBox
+            Grid.Row="2"
+			x:Name="TxtNote"
+            AcceptsReturn="True"
+            PlaceholderText="Type content..." />
+        <Button 
+            Grid.Row="4"
+            Content="Save"
+            HorizontalAlignment="Stretch" 
+            VerticalAlignment="Center"
+            Click="BtnSave_Click" />
+        <Button 
+            Grid.Row="6"
+            Content="Load"
+            HorizontalAlignment="Stretch" 
+            VerticalAlignment="Center"
+            Click="BtnLoad_Click" />
+    </Grid>
+</Page>

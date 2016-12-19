@@ -1,0 +1,31 @@
+<!--
+	Exemplary file for Chapter 2 - Designing a User Interface.
+    Recipe: Adding a text block.
+-->
+
+<Page
+    x:Class="CH02.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH02"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock
+            FontSize="18"
+            TextWrapping="Wrap"
+            Margin="20">
+            <Run Text="Hello!" 
+                 FontWeight="SemiBold"
+                 FontSize="24" />
+            <LineBreak />
+            <Run Text="The TextBlock control allows to adjust design of particular fragments of its content, "
+                 FontWeight="Thin"
+                 Foreground="Gray" />
+            <Run Text="even within one line."
+                 Foreground="Red" />
+        </TextBlock>
+    </Grid>
+</Page>

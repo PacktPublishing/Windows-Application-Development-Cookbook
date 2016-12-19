@@ -1,0 +1,61 @@
+<!--
+	Exemplary file for Chapter 2 - Designing a User Interface.
+    Recipe: Adding icons to app bars.
+-->
+
+<Page
+    x:Class="CH02.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH02"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid Padding="20">
+        <TextBlock 
+            Text="Exemplary page that contains an app bar with a set of icons."
+            TextWrapping="Wrap"/>
+    </Grid>
+    <Page.BottomAppBar>
+        <AppBar Background="Coral" Foreground="White">
+            <StackPanel Orientation="Horizontal">
+                <AppBarButton
+                    Label="Edit"
+                    Foreground="White"
+                    Icon="Edit"
+                    Click="BtnEdit_Click" />
+                <AppBarButton
+                    Label="Delete"
+                    Foreground="White"
+                    Icon="Delete"
+                    Click="BtnDelete_Click" />
+                <AppBarButton
+                    Label="Cancel"
+                    Foreground="White"
+                    Icon="Cancel"
+                    Click="BtnCancel_Click" />
+            </StackPanel>
+        </AppBar>
+    </Page.BottomAppBar>
+    <Page.TopAppBar>
+        <AppBar Background="RoyalBlue" Foreground="White">
+            <StackPanel Orientation="Horizontal">
+                <AppBarButton
+                    Label="Edit"
+                    Foreground="White"
+                    Icon="Edit"
+                    Click="BtnEdit_Click" />
+                <AppBarButton
+                    Label="Delete"
+                    Foreground="White"
+                    Icon="Delete"
+                    Click="BtnDelete_Click" />
+                <AppBarButton
+                    Label="Cancel"
+                    Foreground="White"
+                    Icon="Cancel"
+                    Click="BtnCancel_Click" />
+            </StackPanel>
+        </AppBar>
+    </Page.TopAppBar>
+</Page>

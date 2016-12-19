@@ -1,0 +1,24 @@
+<!--
+    Exemplary file for Chapter 3 - MVVM and Data Binding.
+    Recipe: Showing a progress bar during calculations.
+-->
+
+<Page
+    x:Class="CH03.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH03"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:converters="using:CH03.Models">
+    <Page.Resources>
+        <converters:BoolToVisibilityNegatedConverter x:Key="BoolToVisibilityNegated" />
+    </Page.Resources>
+    <Grid>
+        <ProgressBar
+            IsIndeterminate="True"
+            VerticalAlignment="Center"
+            Visibility="{Binding IsCompleted, Converter={StaticResource BoolToVisibilityNegated}}" />
+    </Grid>
+</Page>

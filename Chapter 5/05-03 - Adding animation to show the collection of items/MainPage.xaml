@@ -1,0 +1,39 @@
+<!--
+    Exemplary file for Chapter 5 - Animations and Graphics.
+    Recipe: Adding animation to show the collection of items.
+-->
+
+<Page
+    x:Class="CH05.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH05"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center">
+        <ItemsControl>
+            <ItemsControl.ItemContainerTransitions>
+                <TransitionCollection>
+                    <EntranceThemeTransition IsStaggeringEnabled="True" />
+                </TransitionCollection>
+            </ItemsControl.ItemContainerTransitions>
+            <ItemsControl.Items>
+                <TextBlock Text="January 2016" />
+                <TextBlock Text="February 2016" />
+                <TextBlock Text="March 2016" />
+                <TextBlock Text="April 2016" />
+                <TextBlock Text="May 2016" />
+                <TextBlock Text="June 2016" />
+                <TextBlock Text="July 2016" />
+                <TextBlock Text="August 2016" />
+                <TextBlock Text="September 2016" />
+                <TextBlock Text="October 2016" />
+                <TextBlock Text="November 2016" />
+                <TextBlock Text="December 2016" />
+            </ItemsControl.Items>
+        </ItemsControl>
+    </Grid>
+</Page>

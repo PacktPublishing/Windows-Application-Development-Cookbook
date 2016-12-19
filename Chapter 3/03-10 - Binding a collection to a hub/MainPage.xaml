@@ -1,0 +1,24 @@
+<!--
+    Exemplary file for Chapter 3 - MVVM and Data Binding.
+    Recipe: Binding a collection to a hub.
+-->
+
+<Page
+    x:Class="CH03.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH03"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <DataTemplate x:Key="SectionTemplate">
+            <Image
+                Source="{Binding ImageUrl}" 
+                Stretch="UniformToFill" />
+        </DataTemplate>
+    </Page.Resources>
+    <Hub 
+        x:Name="Hub"
+        Margin="0 -20 0 10" />
+</Page>

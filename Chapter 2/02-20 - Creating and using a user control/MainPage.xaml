@@ -1,0 +1,34 @@
+<!--
+	Exemplary file for Chapter 2 - Designing a User Interface.
+    Recipe: Creating and using a user control.
+-->
+
+<Page
+    x:Class="CH02.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH02"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel HorizontalAlignment="Center">
+        <local:TileControl
+            TileBackground="#353535"
+            TileForeground="White"
+            Title="Favorites"
+            IconUrl="/Assets/Favorites.png"
+            Width="100"
+            Height="100"
+            Margin="0 0 0 20"
+            Tapped="TilFavorites_Tapped" />
+        <local:TileControl
+            TileBackground="RoyalBlue"
+            TileForeground="White"
+            Title="Settings"
+            IconUrl="/Assets/Settings.png"
+            Width="100"
+            Height="100"
+            Tapped="TilSettings_Tapped" />
+    </StackPanel>
+</Page>

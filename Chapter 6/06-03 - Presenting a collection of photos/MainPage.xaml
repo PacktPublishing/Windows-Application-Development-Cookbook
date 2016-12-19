@@ -1,0 +1,29 @@
+<!--
+    Exemplary file for Chapter 6 - Multimedia.
+    Recipe: Presenting a collection of photos.
+-->
+
+<Page
+    x:Class="CH06.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH06"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <Style TargetType="Image">
+            <Setter Property="Stretch" Value="UniformToFill" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <FlipView>
+            <Image Source="/Assets/01.jpg" />
+            <Image Source="/Assets/02.jpg" />
+            <Image Source="/Assets/03.jpg" />
+            <Image Source="/Assets/04.jpg" />
+        </FlipView>
+    </Grid>
+</Page>

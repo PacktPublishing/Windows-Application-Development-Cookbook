@@ -1,0 +1,36 @@
+<!--
+    Exemplary file for Chapter 8 - Internet-based Scenarios.
+    Recipe: Opening a map in an external application.
+-->
+
+<Page
+    x:Class="CH08.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH08"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <StackPanel 
+        VerticalAlignment="Center"
+        Padding="20">
+        <Button
+            Content="Rzeszow's Town Hall on 2D map"
+            HorizontalAlignment="Stretch"
+            Padding="10"
+            Margin="0 10"
+            Click="BtnTownHall2D_Click" />
+        <Button
+            Content="Rzeszow's Town Hall on 3D map"
+            HorizontalAlignment="Stretch"
+            Padding="10"
+            Margin="0 10"
+            Click="BtnTownHall3D_Click" />
+        <Button
+            Content="Rzeszow's Market Square"
+            HorizontalAlignment="Stretch"
+            Padding="10"
+            Margin="0 10"
+            Click="BtnMarketSquare_Click" />
+    </StackPanel>
+</Page>

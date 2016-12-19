@@ -1,0 +1,37 @@
+<!--
+	Exemplary file for Chapter 2 - Designing a User Interface.
+    Recipe: Adding a combobox.
+-->
+
+<Page
+    x:Class="CH02.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH02"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ComboBox
+            SelectedIndex="1"
+            Header="Language"
+            Foreground="RoyalBlue"
+            BorderBrush="RoyalBlue"
+            BorderThickness="2"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Stretch"
+            Margin="20"
+            SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBoxItem
+                Content="Polish"
+                Tag="PL" />
+            <ComboBoxItem
+                Content="English"
+                Tag="EN" />
+            <ComboBoxItem
+                Content="German"
+                Tag="DE" />
+        </ComboBox>
+    </Grid>
+</Page>

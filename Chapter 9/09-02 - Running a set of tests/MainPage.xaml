@@ -1,0 +1,136 @@
+﻿<!--
+    Exemplary file for Chapter 9 - Testing and Submission.
+    Recipe: Running a set of tests.
+-->
+
+<Page
+    x:Class="CH09.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH09"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:CH09.Models"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <models:IntToVisibilityConverter x:Key="IntToVisibility" />
+        <models:IntToVisibilityNegatedConverter x:Key="IntToVisibilityNegated" />
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+
+        <Grid
+            Grid.Row="1"
+            Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBox
+                Grid.Column="0"
+                Text="{Binding Fuel, Mode=TwoWay}" />
+            <TextBlock
+                Grid.Column="1"
+                Text="liters for" 
+                VerticalAlignment="Center"
+                Margin="5 0" />
+            <TextBox
+                Grid.Column="2"
+                Text="{Binding Distance, Mode=TwoWay}" />
+            <TextBlock
+                Grid.Column="3"
+                Text="km"
+                VerticalAlignment="Center"
+                Margin="5 0" />
+            <Button
+                Grid.Column="5"
+                Command="{Binding CmdAdd}"
+                Content="+" />
+        </Grid>
+
+        <TextBlock
+            Grid.Row="3"
+            Grid.Column="1"
+            TextWrapping="Wrap">
+            <Run Text="The average fuel consumption is" />
+            <Run Text="{Binding Calculator.Average}" FontWeight="Bold" />
+            <Run Text="liters per 100 km" />
+        </TextBlock>
+
+        <TextBlock
+            Grid.Row="5"
+            Grid.Column="1"
+            TextWrapping="Wrap"
+            FontSize="20"
+            Text="Entered data:" />
+
+        <ItemsControl
+            Grid.Row="7"
+            Grid.Column="1"
+            ItemsSource="{Binding Calculator.Consumptions}"
+            Visibility="{Binding Calculator.Consumptions.Count, Converter={StaticResource IntToVisibility}}">
+            <ItemsControl.ItemContainerTransitions>
+                <TransitionCollection>
+                    <EntranceThemeTransition IsStaggeringEnabled="True" />
+                    <RepositionThemeTransition />
+                </TransitionCollection>
+            </ItemsControl.ItemContainerTransitions>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border
+                        Margin="0 5"
+                        BorderBrush="Gray"
+                        BorderThickness="1"
+                        Background="WhiteSmoke"
+                        Padding="10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="20" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0">
+                                <Run Text="{Binding Fuel}" />
+                                <Run Text="l for" />
+                                <Run Text="{Binding Distance}" />
+                                <Run Text="km" />
+                            </TextBlock>
+                            <Button
+                                Grid.Column="2"
+                                Click="BtnDelete_Click"
+                                Content="x" />
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <TextBlock
+            Grid.Row="7"
+            Grid.Column="1"
+            Text="No data"
+            Visibility="{Binding Calculator.Consumptions.Count, Converter={StaticResource IntToVisibilityNegated}}" />
+    </Grid>
+</Page>

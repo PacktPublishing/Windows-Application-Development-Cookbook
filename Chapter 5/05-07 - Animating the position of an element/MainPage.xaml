@@ -1,0 +1,40 @@
+<!--
+    Exemplary file for Chapter 5 - Animations and Graphics.
+    Recipe: Animating the position of an element.
+-->
+
+<Page
+    x:Class="CH05.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH05"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <Storyboard x:Name="RectangleMove">
+            <DoubleAnimation
+                Storyboard.TargetName="RectangleMain"
+                Storyboard.TargetProperty="(Canvas.Left)"
+                To="350"
+                Duration="0:0:1" />
+            <DoubleAnimation
+                Storyboard.TargetName="RectangleMain"
+                Storyboard.TargetProperty="(Canvas.Top)"
+                To="175"
+                Duration="0:0:1" />
+        </Storyboard>
+    </Page.Resources>
+    <Grid>
+        <Canvas>
+            <Rectangle
+                x:Name="RectangleMain"
+                Canvas.Left="50"
+                Canvas.Top="50"
+                Width="100"
+                Height="100"
+                Fill="RoyalBlue"
+                Tapped="Rectangle_Tapped" />
+        </Canvas>
+    </Grid>
+</Page>

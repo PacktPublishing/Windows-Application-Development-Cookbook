@@ -1,0 +1,58 @@
+<!--
+    Exemplary file for Chapter 3 - MVVM and Data Binding.
+    Recipe: Binding a collection to a grid view.
+-->
+
+<Page
+    x:Class="CH03.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH03"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <GridView 
+        ItemsSource="{Binding Categories}"
+        Padding="10"
+        SelectionMode="None"
+        IsItemClickEnabled="True"
+        ItemClick="GridView_ItemClick">
+        <GridView.ItemTemplate>
+            <DataTemplate>
+                <Grid 
+                    Width="135"
+                    Height="135"
+                    Background="RoyalBlue"
+                    Margin="10"
+                    Padding="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock
+                        Grid.Row="1"
+                        Text="{Binding Name}"
+                        FontSize="20"
+                        Foreground="White" />
+                    <Image
+                        Grid.Row="0"
+                        Source="{Binding IconUrl}"
+                        MaxWidth="32" />
+                    <Border
+                        Background="White"
+                        Width="30"
+                        Height="30"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Right">
+                        <TextBlock
+                            Text="{Binding Count}"
+                            Foreground="RoyalBlue"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" />
+                    </Border>
+                </Grid>
+            </DataTemplate>
+        </GridView.ItemTemplate>
+    </GridView>
+</Page>

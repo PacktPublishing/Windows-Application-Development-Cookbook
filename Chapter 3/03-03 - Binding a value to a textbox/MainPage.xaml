@@ -1,0 +1,30 @@
+<!--
+    Exemplary file for Chapter 3 - MVVM and Data Binding.
+    Recipe: Binding a value to a textbox.
+-->
+
+<Page
+    x:Class="CH03.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH03"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <StackPanel Padding="20">
+        <TextBox
+            Text="{Binding UserName, Mode=TwoWay}"
+            PlaceholderText="Type a user name..."
+            FontSize="20" />
+        <TextBlock FontSize="18">
+            <Run Text="Lower:" />
+            <Run Text="{Binding UserNameLower}" FontWeight="SemiBold" />
+            <LineBreak />
+            <Run Text="Upper:" />
+            <Run Text="{Binding UserNameUpper}" FontWeight="SemiBold" />
+            <LineBreak />
+            <Run Text="Reversed:" />
+            <Run Text="{Binding UserNameReversed}" FontWeight="SemiBold" />
+        </TextBlock>
+    </StackPanel>
+</Page>

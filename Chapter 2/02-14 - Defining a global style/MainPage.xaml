@@ -1,0 +1,23 @@
+<!--
+	Exemplary file for Chapter 2 - Designing a User Interface.
+    Recipe: Defining a global style.
+-->
+
+<Page
+    x:Class="CH02.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH02"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ScrollViewer Style="{StaticResource ScrMain}">
+        <StackPanel>
+            <Button Content="Dashboard" />
+            <Button Content="News" />
+            <Button Content="Gallery" />
+            <Button Content="Movies" />
+            <Button Content="Contact" />
+        </StackPanel>
+    </ScrollViewer>
+</Page>

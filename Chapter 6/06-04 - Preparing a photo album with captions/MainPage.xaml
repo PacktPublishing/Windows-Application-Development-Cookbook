@@ -1,0 +1,41 @@
+<!--
+    Exemplary file for Chapter 6 - Multimedia.
+    Recipe: Preparing a photo album with captions.
+-->
+
+<Page
+    x:Class="CH06.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH06"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid>
+        <FlipView ItemsSource="{Binding Photos}">
+            <FlipView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Image
+                            Source="{Binding Url}"
+                            Stretch="UniformToFill"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center" />
+                        <Border
+                            VerticalAlignment="Bottom"
+                            Padding="20"
+                            Background="Black"
+                            Opacity="0.7">
+                            <TextBlock
+                                Text="{Binding Caption}"
+                                FontSize="20"
+                                MaxLines="1"
+                                TextTrimming="CharacterEllipsis"
+                                Foreground="White" />
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </FlipView.ItemTemplate>
+        </FlipView>
+    </Grid>
+</Page>

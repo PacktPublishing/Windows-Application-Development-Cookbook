@@ -1,0 +1,33 @@
+<!--
+	Exemplary file for Chapter 2 - Designing a User Interface.
+    Recipe: Arranging controls in a scrollable view.
+-->
+
+<Page
+    x:Class="CH02.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH02"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer 
+        Padding="10"
+        ScrollViewer.VerticalScrollBarVisibility="Auto">
+        <StackPanel>
+            <Image 
+                Source="/Assets/Gallery1.jpg"
+                Margin="10" />
+            <Image 
+                Source="/Assets/Gallery2.jpg"
+                Margin="10" />
+            <Image 
+                Source="/Assets/Gallery3.jpg"
+                Margin="10" />
+            <Image
+                Source="/Assets/Gallery4.jpg"
+                Margin="10" />
+        </StackPanel>
+    </ScrollViewer>
+</Page>

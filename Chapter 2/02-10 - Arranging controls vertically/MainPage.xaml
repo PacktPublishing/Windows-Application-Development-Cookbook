@@ -1,0 +1,55 @@
+<!--
+	Exemplary file for Chapter 2 - Designing a User Interface.
+    Recipe: Arranging controls vertically.
+-->
+
+<Page
+    x:Class="CH02.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH02"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+	<StackPanel Background="White" Padding="20">
+		<TextBlock
+			Text="Create an account"
+			FontSize="26"
+			Margin="0 0 0 20" />
+		<TextBox
+			Header="Login"
+			PlaceholderText="Type a login..."
+			InputScope="AlphanumericFullWidth"
+			Margin="0 0 0 20" />
+		<PasswordBox
+			Header="Password"
+			PlaceholderText="Type a password..."
+			Margin="0 0 0 20" />
+		<TextBox
+			Header="E-mail address"
+			PlaceholderText="Type an e-mail address..."
+			InputScope="EmailNameOrAddress"
+			Margin="0 0 0 20" />
+		<ComboBox
+			Header="Country"
+			PlaceholderText="Choose a country..."
+			HorizontalAlignment="Stretch"
+			Margin="0 0 0 20">
+			<ComboBoxItem Content="Poland" />
+			<ComboBoxItem Content="United States" />
+			<ComboBoxItem Content="England" />
+			<ComboBoxItem Content="Germany" />
+			<ComboBoxItem Content="France" />
+		</ComboBox>
+		<CheckBox Margin="0 0 0 20">
+			<TextBlock Text="I have accepted the rules" />
+		</CheckBox>
+		<Button
+			Content="Register"
+			HorizontalAlignment="Stretch"
+			BorderBrush="Black"
+			BorderThickness="1"
+			Padding="10"/>
+	</StackPanel>
+</Page>

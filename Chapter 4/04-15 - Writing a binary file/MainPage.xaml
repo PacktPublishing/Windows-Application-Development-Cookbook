@@ -1,0 +1,52 @@
+<!--
+    Exemplary file for Chapter 4 - Data Storage.
+    Recipe: Writing a binary file.
+-->
+
+<Page
+    x:Class="CH04.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH04"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Padding="20">
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="1"
+            Text="Experiments"
+            FontSize="24" />
+        <TextBlock Margin="0 20 0 5">
+            <Run Text="Minimum:" />
+            <Run Text="{Binding Minimum}" FontWeight="SemiBold" />
+        </TextBlock>
+        <TextBlock Margin="0 5">
+            <Run Text="Maximum:" />
+            <Run Text="{Binding Maximum}" FontWeight="SemiBold" />
+        </TextBlock>
+        <TextBlock Margin="0 5">
+            <Run Text="Average:" />
+            <Run Text="{Binding Average}" FontWeight="SemiBold" />
+        </TextBlock>
+        <TextBlock Margin="0 5">
+            <Run Text="Count:" />
+            <Run Text="{Binding Count}" FontWeight="SemiBold" />
+        </TextBlock>
+        <TextBlock Margin="0 5">
+            <Run Text="Time [ms]:" />
+            <Run Text="{Binding Time}" FontWeight="SemiBold" />
+        </TextBlock>
+        <Button 
+            Content="Start experiment"
+            HorizontalAlignment="Stretch" 
+            Margin="0 20 0 10"
+            Command="{Binding CmdStart}" />
+        <Button 
+            Content="Save results"
+            HorizontalAlignment="Stretch" 
+            Margin="0 10"
+            Command="{Binding CmdSave }" />
+    </StackPanel>
+</Page>

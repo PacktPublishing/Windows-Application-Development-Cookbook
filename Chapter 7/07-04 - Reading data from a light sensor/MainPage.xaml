@@ -1,0 +1,31 @@
+<!--
+    Exemplary file for Chapter 7 - Built-in Sensors.
+    Recipe: Reading data from a light sensor.
+-->
+
+<Page
+    x:Class="CH07.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH07"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="White"
+    x:Name="Page">
+    <StackPanel
+        Padding="20"
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center">
+        <Viewbox MaxWidth="200">
+            <SymbolIcon 
+                x:Name="Symbol"
+                Symbol="Audio" />
+        </Viewbox>
+        <TextBlock
+            x:Name="Text"
+            Text="Let's play music!"
+            FontWeight="ExtraBold"
+            FontSize="26" />
+    </StackPanel>
+</Page>

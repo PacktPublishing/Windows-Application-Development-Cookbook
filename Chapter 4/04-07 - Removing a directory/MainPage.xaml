@@ -1,0 +1,55 @@
+<!--
+    Exemplary file for Chapter 4 - Data Storage.
+    Recipe: Removing a directory.
+-->
+
+<Page
+    x:Class="CH04.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CH04"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel>
+        <Button 
+            Content="Create directories"
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"
+            Click="BtnCreateDirectory_Click" />
+        <Button 
+            Content="Iterate through directories"
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"
+            Click="BtnIterateDirectories_Click" />
+        <Button
+            Content="Create files"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Click="BtnCreateFile_Click" />
+        <Button 
+            Content="Iterate through files"
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"
+            Click="BtnIterateFiles_Click" />
+        <Button 
+            Content="Rename a directory"
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"
+            Click="BtnRenameDirectory_Click" />
+        <Button 
+            Content="Rename a file"
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"
+            Click="BtnRenameFile_Click" />
+        <Button 
+            Content="Delete a directory"
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"
+            Click="BtnDeleteDirectory_Click" />
+        <TextBlock
+            x:Name="TxtResult"
+            TextWrapping="Wrap" />
+    </StackPanel>
+</Page>
