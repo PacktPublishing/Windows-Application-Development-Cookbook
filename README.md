@@ -1,7 +1,7 @@
 #Windows Application Development Cookbook
 This is the code repository for [Windows Application Development Cookbook](Current URL?utm_source=github&utm_medium=repository&utm_campaign=9781786467720), published by [Packt](www.packtpub.com). It contains all the supporting project files necessary to work through the book from start to finish.
 ## About the Book
-Click here for FAQs, order information, T&Cs, errata and code downloads.
+[Click here](https://www.packtpub.com/books/content/support) for FAQs, order information, T&Cs, errata and code downloads.
 ##Instructions and Navigations
 All of the code is organized into folders. Each folder starts with a number followed by the application name. For example, Chapter02.
 
